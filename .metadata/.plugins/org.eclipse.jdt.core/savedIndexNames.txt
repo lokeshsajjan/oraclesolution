@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\work\Projects\Truepay\workspace\OracleCoding\.metadata\.plugins\org.eclipse.jdt.core
+884520277.index
+1577308894.index

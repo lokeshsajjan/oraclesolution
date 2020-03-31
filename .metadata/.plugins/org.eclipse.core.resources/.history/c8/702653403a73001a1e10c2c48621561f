@@ -1,0 +1,68 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class Solution {
+
+	public static void main(String[] args) {
+		String input = "the black cat jumped on the roof";
+		input = input.replace(" ", "");
+		int L = input.length();// length of a input after removing spaces
+		double R = getPRESQRT(L);
+		double C = getPOSTSQRT(L, R);
+		Map<Integer, String> mp = new HashMap();
+		if (R * C >= L) {
+			int position = 0;
+			for (int i = 0; i <= R; i++) {
+				for (int j = 0; j <= C; j++) {
+					if (position < L) {
+						System.out.print(input.charAt(position) + " ");
+						if (mp.get(j) != null) {
+							mp.put(j, mp.get(j) + (input.charAt(position)));
+						} else {
+							mp.put(j, String.valueOf(input.charAt(position)));
+						}
+					}
+					position++;
+				}
+				System.out.println("");
+			}
+			// loop in to map
+			for (Entry<Integer, String> en : mp.entrySet()) {
+				System.out.print(en.getValue() + " ");
+			}
+
+		} else {
+			System.out.println("RXC combination is not correct");
+		}
+
+	}
+
+	private static double getPRESQRT(int L) {
+		int value = -1;
+		for (int i = 1; i < L; i++) {
+			/// check perfect square root of a number
+			if (checkPerfectSquareRoot(i)) {
+				value = Math.max(i, value);
+			}
+		}
+		return  Math.sqrt(value);
+	}
+
+	private static boolean checkPerfectSquareRoot(double i) {
+		double sqrtValue = Math.sqrt(i);
+		System.out.println(sqrtValue);		
+		if (sqrtValue == (i * i)) {
+			return true;
+		}
+		return false;
+	}
+
+	private static double getPOSTSQRT(int L, double r) {
+		/*
+		 * int value = Integer.MAX_VALUE; while (true) { if (checkPerfectSquareRoot(L))
+		 * { value = Math.min(L, value); break; } L++; } return Math.sqrt(value);
+		 */
+		return 6.0;}
+
+}

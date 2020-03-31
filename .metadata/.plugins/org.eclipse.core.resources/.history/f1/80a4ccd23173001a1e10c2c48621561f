@@ -1,0 +1,28 @@
+
+public class Solution {
+
+	public static void main(String[] args) {
+		String input="the black cat jumped on the roof";
+		input=input.replace(" ", "");
+		int L=input.length();//length of a input after removing spaces
+		int R=getPRESQRT(L);
+		int C=getPRESQRT(L,R);
+		if(R*C>=L) {
+			
+		}else {
+			System.out.println("RXC combination is not correct");
+		}
+		
+
+	}
+
+	private static int getPRESQRT(int l, int r) {	
+		return 0;
+	}
+
+	private static int getPRESQRT(int l) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
